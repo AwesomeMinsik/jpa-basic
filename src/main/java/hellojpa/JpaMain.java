@@ -15,16 +15,15 @@ public class JpaMain {
 
         List<Member> resultList = em.createQuery("select m from Member as m", Member.class).getResultList();
         //jpql 객체를 다루는 쿼리라 * 안써지는거같음
+        Member findMember1= em.find(Member.class,150L);
+        Member findMember2= em.find(Member.class,150L);
 
-        Member member1 = new Member(150L,"A");
-        Member member2 = new Member(160L,"B");
-        em.find(Member.class,150L);
+        System.out.println("result="+(findMember1 == findMember2));
 
 
-
-        for (Member member : resultList) {
-            System.out.println(member.getName());
-        }
+//        for (Member member : resultList) {
+//            System.out.println(member.getName());
+//        }
 
 
         em.close();

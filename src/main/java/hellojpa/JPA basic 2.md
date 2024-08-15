@@ -58,7 +58,7 @@ em.detach(member);
 //JPA에서 엔티티를 조회하면 무조건 영속성 컨텍스트에 저장한다.
 Member findMember1 = em.find(Member.class,101L);
 Member findMember2 = em.find(Member.class,101L);
-System.out.println("result"+(findMember1==findMember2));
+System.out.println("result"+(findMember1 == findMember2);
 ```
 
 **트랜잭션을 지원하는 쓰기 지연**
