@@ -1,6 +1,7 @@
 package hellojpa;
 
 import jakarta.persistence.*;
+import super_class.Movie;
 
 import java.util.List;
 
@@ -24,6 +25,16 @@ public class JpaMain {
 //        for (Member member : resultList) {
 //            System.out.println(member.getName());
 //        }
+
+        tx.begin();
+        Movie movie = new Movie();
+        movie.setActor("A");
+        movie.setName("바람과함께 사라지다");
+        movie.setDirector("B");
+        movie.setPrice(10000);
+
+        em.persist(movie);
+        tx.commit();
 
 
         em.close();
